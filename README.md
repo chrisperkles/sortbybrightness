@@ -1,6 +1,6 @@
 # Sort by Brightness
 
-A Python script that analyzes photos by brightness levels and copies only those meeting specified criteria to organized output folders. Perfect for sorting large collections of camera trap images, security camera footage, or any photo archive where you want to separate daylight shots from nighttime images.
+A Python script that analyzes photos by brightness levels and copies only those meeting specified criteria to organized output folders. Perfect for sorting large collections of camera trap images, security camera footage, timelapse sequences, or any photo archive where you want to separate daylight shots from nighttime images.
 
 ## Features
 
@@ -63,6 +63,11 @@ python3 select_by_brightness.py /path/to/photos /path/to/night_images --threshol
 **Process with very strict bright daylight filter:**
 ```bash
 python3 select_by_brightness.py /path/to/images /path/to/bright_only --threshold 140
+```
+
+**Extract daylight frames from timelapse sequence:**
+```bash
+python3 select_by_brightness.py /path/to/timelapse_frames /path/to/daylight_frames --threshold 110
 ```
 
 ## Real-World Usage
