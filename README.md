@@ -40,29 +40,29 @@ python3 select_by_brightness.py SOURCE_DIR DESTINATION_DIR --threshold BRIGHTNES
 
 ### Understanding Brightness Thresholds
 
-The brightness calculation uses histogram analysis where **lower values indicate brighter images**:
+The brightness calculation uses histogram analysis where **higher threshold values select brighter images**:
 
-- **60-80**: Very bright daylight shots
-- **80-100**: Good daylight images  
-- **100-120**: Overcast/indoor lighting
-- **120-140**: Dim lighting/dusk
-- **140+**: Dark/nighttime images
+- **140+**: Very bright daylight shots only
+- **110-120**: Good daylight images  
+- **90-100**: Overcast/indoor lighting included
+- **70-80**: Dim lighting/dusk included
+- **60-**: Includes dark/nighttime images
 
 ### Examples
 
 **Select bright daylight photos only:**
 ```bash
-python3 select_by_brightness.py /path/to/camera_trap /path/to/daylight_only --threshold 90
+python3 select_by_brightness.py /path/to/camera_trap /path/to/daylight_only --threshold 110
 ```
 
 **Select nighttime/dark images:**
 ```bash
-python3 select_by_brightness.py /path/to/photos /path/to/night_images --threshold 90 --invert
+python3 select_by_brightness.py /path/to/photos /path/to/night_images --threshold 110 --invert
 ```
 
-**Process with very strict daylight filter:**
+**Process with very strict bright daylight filter:**
 ```bash
-python3 select_by_brightness.py /path/to/images /path/to/bright_only --threshold 70
+python3 select_by_brightness.py /path/to/images /path/to/bright_only --threshold 140
 ```
 
 ## Real-World Usage
